@@ -1,0 +1,94 @@
+{
+  "name": "commit-watcher",
+  "displayName": "Commit Watcher",
+  "description": "keeps commits small by inspecting your working tree and warning (or guiding you) when too many files or lines are staged.",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.106.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "commitWatcher.checkNow",
+        "title": "Commit Watcher: Check Now"
+      },
+      {
+        "command": "commitWatcher.partitionChanges",
+        "title": "Commit Watcher: Partition Changes"
+      }
+    ],
+    "views": {
+      "scm": [
+        {
+          "id": "commitWatcher.bucketView",
+          "name": "Commit Buckets",
+          "type": "webview"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Commit Watcher",
+      "properties": {
+        "commitWatcher.maxFiles": {
+          "type": "number",
+          "default": 10,
+          "description": "Maximum number of changed files before a bloat warning is shown."
+        },
+        "commitWatcher.maxLines": {
+          "type": "number",
+          "default": 1000,
+          "description": "Maximum number of changed lines (added+deleted) before a bloat warning is shown."
+        },
+        "commitWatcher.autoCheckOnSave": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically run bloat check after saving a file."
+        },
+        "commitWatcher.pollInterval": {
+          "type": "number",
+          "default": 5,
+          "description": "Seconds between automatic checks. Set to 0 to disable."
+        },
+        "commitWatcher.warnRatio": {
+          "type": "number",
+          "default": 0.7,
+          "minimum": 0.1,
+          "maximum": 1,
+          "description": "Ratio of limit at which to switch from green to yellow status (e.g. 0.7 = 70% of limit)."
+        },
+        "commitWatcher.statusBarType": {
+          "type": "string",
+          "default": "progress",
+          "enum": ["text", "progress", "both"],
+          "description": "Status bar display mode: 'text' for counts, 'progress' for bar+percent, 'both' for bar and counts."
+        }
+      }
+    }
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.106.1",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.46.3",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
