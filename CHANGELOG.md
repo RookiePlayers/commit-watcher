@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/RookiePlayers/commit-watcher/compare/v1.0.0...v1.1.0) (2025-11-21)
+
+
+### Features
+
+* Add initial website for the Commit Watcher VS Code extension ([ef05716](https://github.com/RookiePlayers/commit-watcher/commit/ef05716fcd89897de65fab36e722e232e88fd5a5))
+
 # 1.0.0 (2025-11-21)
 
 

@@ -2,7 +2,7 @@
   "name": "commit-watcher",
   "displayName": "Commit Watcher",
   "description": "keeps commits small by inspecting your working tree and warning (or guiding you) when too many files or lines are staged.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "publisher": "octech",
   "icon": "icon.png",
   "license": "MIT",
