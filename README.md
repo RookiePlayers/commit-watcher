@@ -1,9 +1,13 @@
-# Commit Watcher
+
 
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/octech.commit-watcher?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher)
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/octech.commit-watcher?label=Downloads)](https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher)
 [![License](https://img.shields.io/github/license/RookiePlayers/commit-watcher)](https://github.com/RookiePlayers/commit-watcher/blob/main/LICENSE)
 [![CI](https://github.com/RookiePlayers/commit-watcher/actions/workflows/build.yml/badge.svg)](https://github.com/RookiePlayers/commit-watcher/actions/workflows/build.yml)
+
+# Commit Watcher
+
+<img width="1916" height="1041" alt="image" src="https://github.com/user-attachments/assets/ece478e4-16de-4fd8-951e-3b8611b2f6f2" />
 
 Keep commits small and intentional. Commit Watcher watches your working tree, warns when you exceed your limits, and helps you partition changes into bite‑sized commits right inside VS Code.
 
