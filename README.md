@@ -2,14 +2,19 @@
 
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/octech.commit-watcher?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher)
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/octech.commit-watcher?label=Downloads)](https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher)
-[![License](https://img.shields.io/github/license/RookiePlayers/commit-watcher)](https://github.com/RookiePlayers/commit-watcher/blob/main/LICENSE)
 [![CI](https://github.com/RookiePlayers/commit-watcher/actions/workflows/production.yml/badge.svg)](https://github.com/RookiePlayers/commit-watcher/actions/workflows/production.yml)
+[![Open in VS Code](https://img.shields.io/badge/Open%20in-VS%20Code-blue?logo=visualstudiocode)](https://open.vscode.dev/RookiePlayers/commit-watcher)
+[![GitHub stars](https://img.shields.io/github/stars/RookiePlayers/commit-watcher?style=social)](https://github.com/RookiePlayers/commit-watcher/stargazers)
+[![Last Commit](https://img.shields.io/github/last-commit/RookiePlayers/commit-watcher)](https://github.com/RookiePlayers/commit-watcher/commits/main)
+[![Issues](https://img.shields.io/github/issues/RookiePlayers/commit-watcher)](https://github.com/RookiePlayers/commit-watcher/issues)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
 # Commit Watcher
-
-<img width="1916" height="1041" alt="image" src="https://github.com/user-attachments/assets/ece478e4-16de-4fd8-951e-3b8611b2f6f2" />
-
 Keep commits small and intentional. Commit Watcher watches your working tree, warns when you exceed your limits, and helps you partition changes into bite‑sized commits right inside VS Code.
+
+<img width="1200" height="800" alt="image" style="object-fit:contain" src="https://github.com/user-attachments/assets/ece478e4-16de-4fd8-951e-3b8611b2f6f2" />
+
 
 ## Features
 - **Status bar meter**: changed files/lines vs limits; choose `progress`, `text`, or `both`.
@@ -41,10 +46,11 @@ Keep commits small and intentional. Commit Watcher watches your working tree, wa
 3) (Optional) Click **AI** to generate a commit message; edit as needed.  
 4) Click **Commit bucket** to stage, commit, and push the selection.
 
-## Build from source
+## Integrate with husky
+
+When using Husky you can add a guard in `.husky/pre-commit`:
 ```bash
-npm install
-npm run compile
-npx @vscode/vsce package   # produces commit-watcher.vsix
+#!/usr/bin/env sh
+. "$(dirname "$0")/_/husky.sh"
+npx commit-bloat-watcher --maxFiles 12 --maxLines 800 --quiet
 ```
-CI workflow `.github/workflows/build.yml` packages and uploads the VSIX artifact.
