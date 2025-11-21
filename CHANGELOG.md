@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/RookiePlayers/commit-watcher/compare/v1.2.1...v1.2.2) (2025-11-21)
+
+
+### Bug Fixes
+
+* Add configuration for GitHub assets in release process ([baebf72](https://github.com/RookiePlayers/commit-watcher/commit/baebf724ba4287ee25e649e17a32310efcefee5e))
+
 ## [1.2.1](https://github.com/RookiePlayers/commit-watcher/compare/v1.2.0...v1.2.1) (2025-11-21)
 
 
