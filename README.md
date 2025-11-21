@@ -1,71 +1,41 @@
-# commit-watcher README
+# Commit Watcher
 
-This is the README for your extension "commit-watcher". After writing up a brief description, we recommend including the following sections.
+Keep commits small and intentional. Commit Watcher watches your working tree, warns when you exceed your limits, and helps you partition changes into bite‑sized commits right inside VS Code.
 
 ## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- **Status bar meter**: changed files/lines vs limits; choose `progress`, `text`, or `both`.
+- **Commit Buckets view**: checkboxes, status badges, and paths; click a path to open the diff/file; “Select up to N” to grab a bucket quickly.
+- **One-click partition & push**: stage, commit, and push the selected bucket (auto sets upstream on first push).
+- **AI commit messages**: Copilot-based generation drops directly into the Commit Buckets message box.
+- **Reliable diffs**: handles new/deleted/renamed files safely when opening Working Tree ↔ HEAD.
 
 ## Requirements
+- VS Code `^1.106.0`
+- Node.js 20+ and Git installed
+- (Optional) GitHub Copilot extension for AI commit messages
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+## Commands
+- `Commit Watcher: Partition Changes` (`commitWatcher.partitionChanges`) – open Commit Buckets.
+- `Commit Watcher: Check Now` (`commitWatcher.checkNow`) – refresh counts.
 
-## Extension Settings
+## Extension settings (prefix: `commitWatcher`)
+- `maxFiles` (number, default `10`): file limit.
+- `maxLines` (number, default `1000`): line (add+del) limit.
+- `warnRatio` (number, default `0.7`): warning threshold fraction.
+- `autoCheckOnSave` (boolean, default `true`): refresh after save.
+- `pollInterval` (number, default `5`): seconds between checks (0 disables).
+- `statusBarType` (string, `text` | `progress` | `both`, default `progress`): status bar display.
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+## How to use
+1) Open the Source Control sidebar, select **Commit Buckets** (or click the status bar entry).  
+2) Select files (or use **Select up to N**); click a path to inspect the diff.  
+3) (Optional) Click **AI** to generate a commit message; edit as needed.  
+4) Click **Commit bucket** to stage, commit, and push the selection.
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+## Build from source
+```bash
+npm install
+npm run compile
+npx @vscode/vsce package   # produces commit-watcher.vsix
+```
+CI workflow `.github/workflows/build.yml` packages and uploads the VSIX artifact.

@@ -3,6 +3,14 @@
   "displayName": "Commit Watcher",
   "description": "keeps commits small by inspecting your working tree and warning (or guiding you) when too many files or lines are staged.",
   "version": "0.0.1",
+  "publisher": "octech",
+  "icon":"icon.png",
+  "license": "MIT",
+  
+  "repository": {
+    "url": "https://github.com/RookiePlayers/commit-watcher.git",
+    "type": "git"
+  },
   "engines": {
     "vscode": "^1.106.0"
   },
@@ -79,7 +87,8 @@
     "watch": "tsc -watch -p ./",
     "pretest": "npm run compile && npm run lint",
     "lint": "eslint src",
-    "test": "vscode-test"
+    "test": "node ./out/test/runTest.js",
+    "postinstall": "npx husky"
   },
   "devDependencies": {
     "@types/vscode": "^1.106.1",
