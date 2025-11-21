@@ -83,12 +83,14 @@
   ],
   "scripts": {
     "vscode:prepublish": "npm run compile",
-    "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./",
-    "pretest": "npm run compile && npm run lint",
+    "compile": "tsc -p tsconfig.build.json",
+    "watch": "tsc -w -p tsconfig.build.json",
     "lint": "eslint src",
+    "build": "npm run compile",
+    "pretest": "npm run compile && npm run lint",
     "test": "jest --runInBand",
-    "postinstall": "npx husky"
+    "test:watch": "jest --watch",
+    "publish": "vsce publish --no-yarn"
   },
   "devDependencies": {
     "@types/vscode": "^1.106.1",
