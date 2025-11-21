@@ -11,7 +11,7 @@
     "type": "git"
   },
   "engines": {
-    "vscode": "^1.106.0"
+    "vscode": "^1.77.0"
   },
   "categories": [
     "Other"
@@ -33,7 +33,9 @@
         {
           "id": "commitWatcher.bucketView",
           "name": "Commit Buckets",
-          "type": "webview"
+          "type": "webview",
+          "when": "scmProvider == git",
+          "icon": "icon.png"
         }
       ]
     },
