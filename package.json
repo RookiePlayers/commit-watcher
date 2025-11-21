@@ -2,11 +2,10 @@
   "name": "commit-watcher",
   "displayName": "Commit Watcher",
   "description": "keeps commits small by inspecting your working tree and warning (or guiding you) when too many files or lines are staged.",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "publisher": "octech",
-  "icon":"icon.png",
+  "icon": "icon.png",
   "license": "MIT",
-
   "repository": {
     "url": "https://github.com/RookiePlayers/commit-watcher.git",
     "type": "git"
@@ -72,7 +71,11 @@
         "commitWatcher.statusBarType": {
           "type": "string",
           "default": "progress",
-          "enum": ["text", "progress", "both"],
+          "enum": [
+            "text",
+            "progress",
+            "both"
+          ],
           "description": "Status bar display mode: 'text' for counts, 'progress' for bar+percent, 'both' for bar and counts."
         }
       }
