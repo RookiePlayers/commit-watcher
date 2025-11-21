@@ -31,12 +31,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build extension
         run: npm run build
 
-      - name: Upload build artifacts
-        continue-on-error: true
+      - name: Package VSIX
+        run: npx @vscode/vsce package -o commit-watcher.vsix
+
+      - name: Upload VSIX artifact
         uses: actions/upload-artifact@v4
         with:
-          name: build-artifact
-          path: ./dist/
+          name: commit-watcher-vsix
+          path: commit-watcher.vsix
