@@ -1,3 +1,11 @@
+## [1.2.1](https://github.com/RookiePlayers/commit-watcher/compare/v1.2.0...v1.2.1) (2025-11-21)
+
+
+### Bug Fixes
+
+* Update package version and dependencies ([52bcff9](https://github.com/RookiePlayers/commit-watcher/commit/52bcff96dd1b855df5f23f5498f3a6040c619ea3))
+* Update VS Code engine version and enhance Commit Buckets view configuration ([665fa9a](https://github.com/RookiePlayers/commit-watcher/commit/665fa9aca1143de3e05d7112a272c28eebdd9e1b))
+
 # [1.2.0](https://github.com/RookiePlayers/commit-watcher/compare/v1.1.0...v1.2.0) (2025-11-21)
 
 
