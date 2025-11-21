@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commit Watcher - VS Code Extension</title>
+    <meta name="description" content="Keep commits small and intentional. Commit Watcher helps you partition changes into bite-sized commits right inside VS Code.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <img src="assets/icon.png" alt="Commit Watcher Logo">
+                <span>Commit Watcher</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-to-use">How to Use</a>
+                <a href="#configuration">Configuration</a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher" class="btn btn-primary" target="_blank">Install Extension</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Stop Over-Committing. Start Partitioning.</h1>
+                <p class="hero-subtitle">Keep your commits small, focused, and intentional. Visualize your changes and partition them into bite-sized pieces directly in VS Code.</p>
+                <div class="hero-actions">
+                    <a href="https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher" class="btn btn-primary btn-lg" target="_blank">
+                        Install for VS Code
+                    </a>
+                    <a href="https://github.com/RookiePlayers/commit-watcher" class="btn btn-secondary btn-lg" target="_blank">
+                        View on GitHub
+                    </a>
+                </div>
+                <div class="badges">
+                    <img src="https://img.shields.io/visual-studio-marketplace/v/octech.commit-watcher?label=Version&style=flat-square&color=007acc" alt="Version">
+                    <img src="https://img.shields.io/visual-studio-marketplace/d/octech.commit-watcher?label=Downloads&style=flat-square&color=2da44e" alt="Downloads">
+                    <img src="https://img.shields.io/github/stars/RookiePlayers/commit-watcher?style=flat-square&logo=github" alt="Stars">
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- Placeholder for hero image, using a CSS mock for now or the one from README if available -->
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <img src="https://github.com/user-attachments/assets/ece478e4-16de-4fd8-951e-3b8611b2f6f2" alt="Commit Watcher Demo" class="screenshot">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Commit Watcher?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Status Bar Meter</h3>
+                    <p>Visual feedback on your changed files and lines versus your set limits. Choose between progress bars, text counts, or both.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>Commit Buckets</h3>
+                    <p>Organize changes into buckets. Select files to include, inspect diffs, and "Select up to N" to quickly grab a manageable chunk.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Commit Messages</h3>
+                    <p>Let AI write your commit messages. Uses GitHub Copilot to generate context-aware messages for your selected bucket.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>One-Click Push</h3>
+                    <p>Stage, commit, and push your selected bucket in a single click. Automatically sets upstream on the first push.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to-use" class="how-to-use">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Open Commit Buckets</h3>
+                        <p>Navigate to the Source Control sidebar and select <strong>Commit Buckets</strong>, or simply click the status bar entry.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Select Your Changes</h3>
+                        <p>Manually select files or use the <strong>Select up to N</strong> feature to automatically group changes.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Commit & Push</h3>
+                        <p>Generate a message with AI (optional), then click <strong>Commit bucket</strong> to ship it.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="configuration" class="configuration">
+        <div class="container">
+            <h2 class="section-title">Configuration</h2>
+            <p class="section-subtitle">Customize Commit Watcher to fit your workflow in VS Code settings.</p>
+            <div class="config-table-wrapper">
+                <table class="config-table">
+                    <thead>
+                        <tr>
+                            <th>Setting</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>commitWatcher.maxFiles</code></td>
+                            <td><code>10</code></td>
+                            <td>Maximum number of changed files before warning.</td>
+                        </tr>
+                        <tr>
+                            <td><code>commitWatcher.maxLines</code></td>
+                            <td><code>1000</code></td>
+                            <td>Maximum number of changed lines (add+del) before warning.</td>
+                        </tr>
+                        <tr>
+                            <td><code>commitWatcher.warnRatio</code></td>
+                            <td><code>0.7</code></td>
+                            <td>Threshold ratio to switch status to yellow (0.7 = 70%).</td>
+                        </tr>
+                        <tr>
+                            <td><code>commitWatcher.autoCheckOnSave</code></td>
+                            <td><code>true</code></td>
+                            <td>Automatically refresh counts after saving a file.</td>
+                        </tr>
+                        <tr>
+                            <td><code>commitWatcher.statusBarType</code></td>
+                            <td><code>progress</code></td>
+                            <td>Display mode: 'text', 'progress', or 'both'.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <p>&copy; 2025 Commit Watcher. Released under the MIT License.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/RookiePlayers/commit-watcher" target="_blank">GitHub</a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher" target="_blank">Marketplace</a>
+                <a href="https://github.com/RookiePlayers/commit-watcher/issues" target="_blank">Report Issue</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
