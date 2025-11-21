@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/RookiePlayers/commit-watcher/compare/v1.1.0...v1.2.0) (2025-11-21)
+
+
+### Features
+
+* Migrate website to Next.js ([10a80d9](https://github.com/RookiePlayers/commit-watcher/commit/10a80d9a17a5d8d2d4cbd262a8a3609ade440828))
+
 # [1.1.0](https://github.com/RookiePlayers/commit-watcher/compare/v1.0.0...v1.1.0) (2025-11-21)
 
 
