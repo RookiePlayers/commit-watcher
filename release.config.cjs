@@ -24,6 +24,12 @@ module.exports = {
         "message": "chore(release): ${nextRelease.version} [skip ci]"
       }
     ],
-    '@semantic-release/github'
+    '@semantic-release/github',
+    {
+      assets: [
+        { path: 'dist/**/*', label: 'Distribution files' },
+        { path: 'commit-watcher.vsix', label: 'App bundle' },
+      ],
+    },
   ]
 };
