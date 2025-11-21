@@ -3,7 +3,7 @@
 [![VS Code Marketplace](https://img.shields.io/visual-studio-marketplace/v/octech.commit-watcher?label=VS%20Code%20Marketplace)](https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher)
 [![Downloads](https://img.shields.io/visual-studio-marketplace/d/octech.commit-watcher?label=Downloads)](https://marketplace.visualstudio.com/items?itemName=octech.commit-watcher)
 [![License](https://img.shields.io/github/license/RookiePlayers/commit-watcher)](https://github.com/RookiePlayers/commit-watcher/blob/main/LICENSE)
-[![CI](https://github.com/RookiePlayers/commit-watcher/actions/workflows/build.yml/badge.svg)](https://github.com/RookiePlayers/commit-watcher/actions/workflows/build.yml)
+[![CI](https://github.com/RookiePlayers/commit-watcher/actions/workflows/production.yml/badge.svg)](https://github.com/RookiePlayers/commit-watcher/actions/workflows/production.yml)
 
 # Commit Watcher
 
