@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/RookiePlayers/commit-watcher/compare/v1.2.3...v1.2.4) (2025-11-24)
+
+
+### Bug Fixes
+
+* Update VSIX package naming in release configuration ([713b476](https://github.com/RookiePlayers/commit-watcher/commit/713b4761fd3bd6c5c14b15e08fd85c846357137a))
+
 ## [1.2.3](https://github.com/RookiePlayers/commit-watcher/compare/v1.2.2...v1.2.3) (2025-11-24)
 
 
