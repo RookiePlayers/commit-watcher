@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/RookiePlayers/commit-watcher/compare/v1.2.2...v1.2.3) (2025-11-24)
+
+
+### Bug Fixes
+
+* Update version to 1.2.2 and enhance release configuration ([ed40f2d](https://github.com/RookiePlayers/commit-watcher/commit/ed40f2db644b4c148c180f1bd59b7ee3f6a9bd52))
+
 ## [1.2.2](https://github.com/RookiePlayers/commit-watcher/compare/v1.2.1...v1.2.2) (2025-11-21)
 
 
