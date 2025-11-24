@@ -18,18 +18,26 @@ module.exports = {
     ],
     '@semantic-release/changelog',
     [
+      '@semantic-release/exec',
+      {
+        prepareCmd: 'npm run vscode:prepublish && npx vsce package --out clockit-${nextRelease.version}.vsix'
+      }
+    ],
+    [
       '@semantic-release/git',  
       {
         "assets": ["package.json", "CHANGELOG.md"],
         "message": "chore(release): ${nextRelease.version} [skip ci]"
       }
     ],
-    '@semantic-release/github',
-    {
-      assets: [
-        { path: 'dist/**/*', label: 'Distribution files' },
-        { path: 'commit-watcher.vsix', label: 'App bundle' },
-      ],
-    },
+    [
+      '@semantic-release/github',
+      {
+        assets: [
+          { path: 'dist/**/*', label: 'Distribution files' },
+          { path: 'clockit-*.vsix', label: 'VSIX package' },
+        ],
+      },
+    ],
   ]
 };

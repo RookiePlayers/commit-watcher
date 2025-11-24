@@ -1173,7 +1173,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 			const filePct = stats.files / currentConfig.maxFiles;
 			const linePct = stats.lines / currentConfig.maxLines;
-			const danger = Math.max(filePct, linePct);
+			const averagedPct = (Math.min(1, filePct) + Math.min(1, linePct)) / 2;
+			const overLimit = filePct > 1 || linePct > 1;
+			const danger = overLimit ? 1 : averagedPct;
 
 			let icon = "🟢";
 			let color: vscode.ThemeColor | string | undefined = undefined;
@@ -1191,7 +1193,10 @@ export function activate(context: vscode.ExtensionContext) {
 
 			const bar = makeProgressBar(danger);
 			const countsShort = `${stats.files}/${currentConfig.maxFiles} f | ${stats.lines}/${currentConfig.maxLines} l`;
-			const percent = Math.round(Math.min(1, Math.max(0, danger)) * 100);
+			const percentBase = overLimit
+				? Math.max(filePct, linePct, averagedPct)
+				: averagedPct;
+			const percent = Math.round(Math.min(1, Math.max(0, percentBase)) * 100);
 
 			if (currentConfig.statusBarType === "progress") {
 				statusBar.text = `$(git-commit) ${icon} ${bar} ${percent}%`;
