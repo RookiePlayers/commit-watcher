@@ -20,7 +20,7 @@ module.exports = {
     [
       '@semantic-release/exec',
       {
-        prepareCmd: 'npm run vscode:prepublish && npx vsce package --out clockit-${nextRelease.version}.vsix'
+        prepareCmd: 'npm run vscode:prepublish && npx vsce package --out commit-watcher-${nextRelease.version}.vsix'
       }
     ],
     [
@@ -35,7 +35,7 @@ module.exports = {
       {
         assets: [
           { path: 'dist/**/*', label: 'Distribution files' },
-          { path: 'clockit-*.vsix', label: 'VSIX package' },
+          { path: 'commit-watcher-*.vsix', label: 'VSIX package' },
         ],
       },
     ],
